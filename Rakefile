@@ -15,14 +15,14 @@ Jeweler::Tasks.new do |gem|
   gem.name = "gyast"
   gem.homepage = "http://github.com/hitode909/gyast"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{gist gyazo}
+  gem.description = %Q{gyast takes a screen capture and upload to gist.}
   gem.email = "hitode909@gmail.com"
   gem.authors = ["hitode909"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.add_runtime_dependency 'gisty'
+  gem.executables = ["gyast"]
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -46,5 +46,4 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "gyast #{version}"
   rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
 end
