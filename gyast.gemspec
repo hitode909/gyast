@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gyast}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["hitode909"]
-  s.date = %q{2011-04-20}
+  s.date = %q{2011-04-23}
   s.default_executable = %q{gyast}
   s.description = %q{gyast takes a screen capture and upload to gist.}
   s.email = %q{hitode909@gmail.com}
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "bin/gyast",
+    "gyast.gemspec",
     "lib/gyast.rb",
     "spec/gyast_spec.rb",
     "spec/spec_helper.rb"
