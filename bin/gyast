@@ -17,20 +17,17 @@ end
 
 now = Time.now.to_i
 
-file_png = "/tmp/#{now}.png"
-file_jpg = "/tmp/#{now}.jpg"
+file = "/tmp/#{now}.jpg"
 
 # capture
-system "screencapture -i \"#{file_png}\""
-unless File.exist?(file_png)
+system "screencapture -t jpg -i \"#{file}\""
+unless File.exist?(file)
   exit
 end
 
-system "convert #{file_png} #{file_jpg}"
-
 # post
 begin
-  url = @g.create file_jpg
+  url = @g.create file
 rescue Gisty::InvalidFileException => e
   puts "Error: invalid file"
 rescue Exception => e
@@ -40,5 +37,4 @@ else
   system "open https://gist.github.com/raw/#{id}/#{now}.jpg" if /darwin/ === RUBY_PLATFORM
 end
 
-File.delete(file_jpg)
-File.delete(file_png)
+File.delete(file)
